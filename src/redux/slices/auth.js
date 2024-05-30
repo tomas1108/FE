@@ -120,7 +120,7 @@ export function ForgotPassword(formValues) {
 
     await axios
       .post(
-        "/auth/forgot-password",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/auth/forgot-password",
         {
           ...formValues,
         },
@@ -161,7 +161,7 @@ export function ChangePassowrd(formValues) {
 
     await axios
       .post(
-        "/auth/change-password",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/auth/change-password",
         {
           ...formValues,
         },
@@ -205,7 +205,7 @@ export function createGroup (formValues) {
   return async (dispatch, getState) => {
     await axios
     .post(
-      "user/create-group",
+      "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/create-group",
       {
         ...formValues,
       },
@@ -226,7 +226,7 @@ export function LoginUser(formValues) {
 
     await axios
       .post(
-        "/auth/login",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/auth/login",
         {
           ...formValues,
         },
@@ -294,7 +294,7 @@ export function RegisterUser(formValues) {
 
     await axios
       .post(
-        "/auth/register",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/auth/register",
         {
           ...formValues,
         },
@@ -343,7 +343,7 @@ export function VerifyEmail(formValues) {
 
     await axios
       .post(
-        "/auth/verify",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/auth/verify",
         {
           ...formValues,
         },
@@ -397,7 +397,7 @@ export const UpdateUserProfile = (user_id, formData) => {
       console.log("FORM DATA", formData);
       console.log("USER ID", user_id);
       const response = await axios.post(
-        "/user/update-profile",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/update-profile",
         { _id: user_id, ...formData }, // Thêm user_id và dữ liệu từ form vào payload
         {
           headers: {
@@ -434,7 +434,7 @@ export const UpdateUserAvatar = (user_id, formData) => {
       console.log("FORM DATA", formData);
       console.log("USER ID", user_id);
       const response = await axios.post(
-        "/user/update-avatar",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/update-avatar",
         { _id: user_id, ...formData }, // Thêm user_id và dữ liệu từ form vào payload
         {
           headers: {
