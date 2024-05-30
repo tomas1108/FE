@@ -208,7 +208,7 @@ export function FetchFriends(user_id) {
   return async (dispatch, getState) => {
     await axios
       .get(
-        "bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/get-friends",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/get-friends",
         {
           params: { _id: user_id },
           headers: {
@@ -232,7 +232,7 @@ export function FetchFriendRequests(user_id) {
   return async (dispatch, getState) => {
     await axios
       .get(
-        "bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/get-requests",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/get-requests",
         
         {
           params: { _id: user_id },
@@ -267,7 +267,7 @@ export const SelectConversation = ({ room_id }) => {
 export const FetchCallLogs = () => {
   return async (dispatch, getState) => {
     axios
-      .get("bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/get-call-logs", {
+      .get("http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/get-call-logs", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${getState().auth.token}`,
@@ -328,7 +328,7 @@ export const UpdateUserProfile = (user_id, formData) => {
       console.log("FORM DATA", formData);
       console.log("USER ID", user_id);
       const response = await axios.post(
-        "bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/update-profile",
+        "http://bechat-env.eba-csvanjsa.ap-southeast-1.elasticbeanstalk.com/user/update-profile",
         { _id: user_id, ...formData }, // Thêm user_id và dữ liệu từ form vào payload
         {
           headers: {
